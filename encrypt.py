@@ -30,35 +30,37 @@ encList = {
         "Z" : 26, "z" : 53,
         " " : 27
         }
+
 #the key decides how many times the letters should be rotated (neg back, pos forward)
-encKey = input("What is your encrytion key?(" + str(-(len(encList))) + " --- " + len(encList))
+encKey = input("What is your encrytion key?(" + str(-(len(encList))) + " --- " + str(len(encList)) + ") ")
 encKey = int(encKey)
 
-#this just asks if the user is encrypting or decryting their, if they are decryting the program just does the inverse operation
+#this just asks if the user is encrypting or decryting their, if they are decryting the program just does the inverse operation used to encrypt
 deORen = input("Would you like to encrypt or decrypt or encrypt a message(e/d)?")
 
 #the plaintext or encoded message goes here
 message = input("what is your message?")
 
-print(encList.get(2))
 if deORen == "encrypt" or "e":
+    #where the final numerical answer is stored
+    encAnswer = ("")
     for letters in message:
-        
-        #creates the encryted value
+
+        #creates the encryted value(but is still in numerical form)
         modVal = (encList[letters] + encKey)
-        
+
         #used to make sure value can't go above encKey or below 0. Basically if it goes above/below those values this part wraps their value back around to one/highest value of dict
         if modVal >= len(encList):
             modVal = modVal - len(encList) + 1 # actives if value greater or equal to 1 more that highest value in dict
-            print(modVal)
         elif modVal <= 0:
             modVal = modVal + len(encList) + 1 # actives if 0 or below
-            print(modVal)
         else:
-            #if no rap-around is need it just goes to else
-            print(modVal) 
+            #if no rap-around is needed goes to else
+            for things in encList:
+                print(things)
+    print(encAnswer)
 elif deORen == "decrypt" or "d":
-    print("")
+    print("lol I haven't made this yet")
 else:
     print("error")
     
