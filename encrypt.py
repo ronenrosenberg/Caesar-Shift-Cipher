@@ -36,13 +36,13 @@ encKey = input("What is your encrytion key?(" + str(-(len(encList))) + " --- " +
 encKey = int(encKey)
 
 #this just asks if the user is encrypting or decryting their, if they are decryting the program just does the inverse operation used to encrypt
-deORen = input("Would you like to encrypt or decrypt or encrypt a message(e/d)?")
+deORen = input("Would you like to encrypt or decrypt a message(e/d)?")
 
 #the plaintext or encoded message goes here
 message = input("what is your message?")
 
 if deORen == "encrypt" or "e":
-    #where the final numerical answer is stored
+    #where the final nanswer is stored
     encAnswer = ("")
     for letters in message:
 
@@ -50,14 +50,19 @@ if deORen == "encrypt" or "e":
         modVal = (encList[letters] + encKey)
 
         #used to make sure value can't go above encKey or below 0. Basically if it goes above/below those values this part wraps their value back around to one/highest value of dict
-        if modVal >= len(encList):
-            modVal = modVal - len(encList) + 1 # actives if value greater or equal to 1 more that highest value in dict
+        if modVal >= len(encList) + 1:
+            modVal = modVal - len(encList) # actives if value greater or equal to 1 more that highest value in dict
         elif modVal <= 0:
-            modVal = modVal + len(encList) + 1 # actives if 0 or below
-        else:
-            #if no rap-around is needed goes to else
-            for things in encList:
-                print(things)
+            modVal = modVal + len(encList) # actives if 0 or below
+        
+        #this is the part that turns each number back into a character and adds a space inbetween values
+        for k, v in encList.items():
+            if v == modVal:
+                encAnswer += k + " "
+    #prints final answer(note, bug, it prints twice?)
+    print(encAnswer)
+
+
     print(encAnswer)
 elif deORen == "decrypt" or "d":
     print("lol I haven't made this yet")
