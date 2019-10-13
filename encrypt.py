@@ -41,7 +41,7 @@ deORen = input("Would you like to encrypt or decrypt a message(e/d)?")
 #the plaintext or encoded message goes here
 message = input("what is your message?")
 
-if deORen == "encrypt" or "e":
+if deORen == "encrypt" or deORen == "e":
     #where the final nanswer is stored
     encAnswer = ("")
     for letters in message:
@@ -54,17 +54,20 @@ if deORen == "encrypt" or "e":
             modVal = modVal - len(encList) # actives if value greater or equal to 1 more that highest value in dict
         elif modVal <= 0:
             modVal = modVal + len(encList) # actives if 0 or below
+        else:
+            print("how..how did you break this...")
         
         #this is the part that turns each number back into a character and adds a space inbetween values
         for k, v in encList.items():
             if v == modVal:
                 encAnswer += k + " "
+    
     #prints final answer(note, bug, it prints twice?)
     print(encAnswer)
 
 
     print(encAnswer)
-elif deORen == "decrypt" or "d":
+elif deORen == "decrypt" or deORen == "d":
     print("lol I haven't made this yet")
 else:
     print("error")
