@@ -31,7 +31,7 @@ encList = {
         " " : 27
         }
 #the key decides how many times the letters should be rotated (neg back, pos forward)
-encKey = input("What is your encrytion key?(" + str(-(len(encList))) + " --- "len(encList))
+encKey = input("What is your encrytion key?(" + str(-(len(encList))) + " --- " + len(encList))
 encKey = int(encKey)
 
 #this just asks if the user is encrypting or decryting their, if they are decryting the program just does the inverse operation
