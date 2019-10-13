@@ -62,11 +62,9 @@ if deORen == "encrypt" or deORen == "e":
             if v == modVal:
                 encAnswer += k + " "
     
-    #prints final answer(note, bug, it prints twice?)
+    #prints final answer
     print(encAnswer)
 
-
-    print(encAnswer)
 elif deORen == "decrypt" or deORen == "d":
     print("lol I haven't made this yet")
 else:
