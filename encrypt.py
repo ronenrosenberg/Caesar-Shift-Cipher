@@ -103,3 +103,5 @@ elif deORen == "decrypt" or deORen == "d":
     print(finalDe)
 else:
     print("error")
+
+#ver 1.0 is done!
