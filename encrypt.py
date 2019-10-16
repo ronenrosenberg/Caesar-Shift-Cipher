@@ -93,6 +93,8 @@ elif deORen == "decrypt" or deORen == "d":
             almostDone.append(numbers - len(encList)) # actives if value greater or equal to 1 more that highest value in dict
         elif numbers <= 0:
             almostDone.append(numbers + len(encList)) # actives if 0 or below
+        else:
+            almostDone.append(numbers)
     
     for things in almostDone:
         for k, v in encList.items():
