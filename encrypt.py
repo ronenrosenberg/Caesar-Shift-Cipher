@@ -50,7 +50,7 @@ if deORen == "encrypt" or deORen == "e":
         modVal = (encList[letters] + encKey)
 
         #used to make sure value can't go above len(encKey) or below 0. Basically if it goes above/below those values this part wraps their value back around to one/highest value of dict
-        if modVal >= len(encList) + 1:
+        if modVal > len(encList):
             modVal = modVal - len(encList) # actives if value greater or equal to 1 more that highest value in dict
         elif modVal <= 0:
             modVal = modVal + len(encList) # actives if 0 or below
@@ -89,9 +89,9 @@ elif deORen == "decrypt" or deORen == "d":
     
     for numbers in rotatedDe:
         #used to make sure value can't go above len(rotatedDe) or below 0. Basically if it goes above/below those values this part wraps their value back around to one/highest value of dict
-        if numbers >= len(encList) + 1:
+        if numbers > len(encList):
             almostDone.append(numbers - len(encList)) # actives if value greater or equal to 1 more that highest value in dict
-        elif numbers <= 0:
+        elif numbers < 1:
             almostDone.append(numbers + len(encList)) # actives if 0 or below
         else:
             almostDone.append(numbers)
@@ -100,7 +100,7 @@ elif deORen == "decrypt" or deORen == "d":
         for k, v in encList.items():
             if v == things:
                 finalDe += k
-    print(finalDe)
+    print(("Your message decryped is:") + finalDe)
 else:
     print("error")
 
